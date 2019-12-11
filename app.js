@@ -68,7 +68,7 @@ function imgSelected(e) {
                     $(".userImgOverlay").height(imgHeight);
 
                     if (celebrities.length === 0) {
-                        $(".statusText").text((unrecognized.length === 1) 
+                        $(".statusText").text((unrecognized.length >= 1) 
                             ? "No Celebrities Found"
                             : "No Faces Found");
                     } else {
