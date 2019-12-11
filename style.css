@@ -66,10 +66,10 @@ a {
 }
 
 .polaroidAnimation {
-  animation: saturateImg 3s ease;
+  animation: saturateImg 5s ease;
 }
 
-@keyframes saturateImg { from { filter: saturate(30%); } to { filter: saturate(100%); }  }
+@keyframes saturateImg { from { filter: saturate(25%); } to { filter: saturate(100%); }  }
 
 .statusContainer {
   display: flex;
