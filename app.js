@@ -1,5 +1,4 @@
 let rekognition;
-
 let celebrities;
 let unrecognized;
 
@@ -34,10 +33,8 @@ function imgSelected(e) {
 
     // Show the user the image that they just uploaded
     $(".landingContainer").hide();
-
     $(".userImg").attr("src", `${URL.createObjectURL(e.target.files[0])}`);
     $(".userImg").addClass("polaroidAnimation");
-
     $(".imgViewContainer").show();
 
     // Load base64 encoded image for display
@@ -131,6 +128,9 @@ function resetToDefault() {
     $(".userImg").removeAttr("src");
     $(".userImg").removeClass("polaroidAnimation");
     $(".userImg").css("transform", "");
+
+    $(".userImgOverlay").empty();
+
     $(".statusText").text("");
     $(".statusLinkedText").text("");
     $(".statusLinkedText").removeAttr("href");
