@@ -48,9 +48,6 @@ function imgSelected(e) {
 
             // Call the AWS Rekognition API
             rekognition.recognizeCelebrities({ Image: { Bytes: e.target.result } }, (err, data) => {
-                $(".spinner").hide();
-                console.log(data);
-
                 let link = false;
                 if (err) {
                     console.log(err, err.stack);
@@ -97,14 +94,25 @@ function imgSelected(e) {
                             $(".userImgOverlay").append($("<a></a>")
                                 .attr({ "id": rekID, "title": celebrities[c]["Name"], "href": `https://${celebrities[c]["Urls"][0]}`, "target": "_blank" })
                                 .css({ "width": boxWidth, "height": boxHeight, "margin-left": boxLeft, "margin-top": boxTop })
-                                .addClass("boundingBox")
-                                .addClass("boundingBoxCeleb"));
+                                .addClass("boundingBox"));
                         }
                     }
 
-                    
+                    for (let u = 0; u < unrecognized.length; u++) {
+                        const box = unrecognized[u]["BoundingBox"];
+                        const boxLeft = Math.round(box["Left"] * imgWidth) + "px";
+                        const boxWidth = Math.round(box["Width"] * imgWidth) + "px";
+                        const boxTop = Math.round(box["Top"] * imgHeight) + "px";
+                        const boxHeight = Math.round(box["Height"] * imgHeight) + "px";
+
+                        $(".userImgOverlay").append($("<div></div>")
+                            .attr({ "title": "Unknown" })
+                            .css({ "width": boxWidth, "height": boxHeight, "margin-left": boxLeft, "margin-top": boxTop })
+                            .addClass("boundingBoxUnknown"));
+                    }
                 }
                 
+                $(".spinner").hide();
                 link ? $(".statusLinkedText").fadeIn() : $(".statusText").fadeIn();
             });    
         };
