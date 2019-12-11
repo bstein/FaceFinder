@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Camera-Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Camera" transform="translate(3.000000, 3.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <circle id="Oval" cx="9" cy="10" r="3.2"></circle>
+            <path d="M5.5,0 L4.17,2 L2,2 C0.9,2 1.77635684e-15,2.9 1.77635684e-15,4 L1.77635684e-15,16 C1.77635684e-15,17.1 0.9,18 2,18 L16,18 C17.1,18 18,17.1 18,16 L18,4 C18,2.9 17.1,2 16,2 L13.83,2 L12.5,0 L5.5,0 Z M9,15 C6.24,15 4,12.76 4,10 C4,7.24 6.24,5 9,5 C11.76,5 14,7.24 14,10 C14,12.76 11.76,15 9,15 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
